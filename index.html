@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loading css icon</title>
+</head>
+<body>
+  <style>
+    html,body{
+      padding: 0;
+      margin: 0;
+    }
+    [v-cloak]{
+      display: none;
+    }
+    #app{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    h2{
+      text-align: center;
+      padding: 30px;
+      color: #666;
+    }
+    .demo{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .demo li{
+      float: left;
+      width: 25%;
+      height: 220px;
+    }
+    iframe{
+      border: none;
+      width: 100%;
+    }
+    @media screen and (max-width: 768px) {
+      .demo li{
+        width: 100%;
+        height: 220px;
+      }
+    }
+  </style>
+  <div id="app" v-cloak>
+    <h2>CSS3 LOADING</h2>
+    <ul class="demo">
+      <li v-for="item in page"><iframe seamless :src="'./page/'+item"></iframe></li>
+    </ul>
+    <div style="clear:both;"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        page:[
+          '1-rotating-plane.html',
+          '2-double-bounce.html',
+          '3-wave.html',
+          '4-wandering-cubes.html',
+          '5-pulse.html',
+          '6-chasing-dots.html',
+          '7-three-bounce.html',
+          '8-circle.html',
+          '9-cube-grid.html',
+          '10-fading-circle.html',
+          '11-folding-cube.html',
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
